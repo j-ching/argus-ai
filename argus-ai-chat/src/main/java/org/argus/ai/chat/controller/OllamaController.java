@@ -34,7 +34,7 @@ public class OllamaController {
 
 
     public OllamaController(@Autowired OllamaConnectionProperties ollamaConnectionProperties) {
-        //加载模型
+        //加载本地模型
         OllamaApi api = new OllamaApi(ollamaConnectionProperties.getBaseUrl());
         var modelManagementOptions = ModelManagementOptions.builder()
                 .maxRetries(DEFAULT_MAX_RETRIES)
@@ -54,6 +54,7 @@ public class OllamaController {
 
     @PostMapping(value = "/chat", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<ServerSentEvent<String>> chat(@RequestBody String message) {
+        //通过模型进行对话
         return chatModel.stream(message)
                 .doOnError(e -> {
                     System.out.println("Error: " + e.getMessage());
