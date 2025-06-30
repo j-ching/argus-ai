@@ -8,21 +8,16 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>argus-ai-chat</artifactId>
-    <name>ARGUS-AI :: argus-ai-chat</name>
+    <name>ARGUS-AI :: chat</name>
     <description>argus-ai-chat</description>
     <dependencies>
         <dependency>
+            <groupId>org.argus.ai</groupId>
+            <artifactId>argus-ai-mcp</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-starter-model-ollama</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
